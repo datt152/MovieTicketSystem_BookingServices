@@ -1,19 +1,22 @@
 package movieticketsystem_bookingservice.dto;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class BookingDTO implements Serializable {
-    private Long bookingId;
+@NoArgsConstructor
+@Builder
+public class BookingCreateRequest {
     private Long userId;
     private Long movieId;
     private String seatNumber;
     private Double amount;
-    private String status; // PENDING, CONFIRMED, FAILED
+    private String status;
 }
